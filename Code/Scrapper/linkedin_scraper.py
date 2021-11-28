@@ -18,11 +18,12 @@ import json
 import traceback
 
 def get_jobs(role, location, no_of_jobs_to_retrieve, all_skills):
-    match_threshold=1
-    url = "https://www.linkedin.com/jobs/jobs-in-"+location+"?keywords="+role+"&f_JT=F%2CP&f_E=1%2C3&position=1&pageNum=0"
+    url = "https://www.linkedin.com/jobs/jobs-in-"+location+"?keywords="+role
     url = url.replace(' ', '%20')
-    print(url)
     k1 = requests.get(url)
+    if k1.status_code != 200:
+        print(url)
+        print("Connection Failed")
     soup1 = BeautifulSoup(k1.content, 'html.parser')
     string1 = soup1.find_all("a",{"class":"base-card__full-link"})
     jobs = []
@@ -40,11 +41,18 @@ def get_jobs(role, location, no_of_jobs_to_retrieve, all_skills):
                 k = requests.get(string1[i]['href']).text
                 soup=BeautifulSoup(k,'html.parser')
                 str2 = soup.find_all("div", {"class" : "description__text"})
-                str3 = str2[0].get_text()
-                job["skills"] = helper.extract_skills(str3, all_skills)
+                skills = []
+                if len(str2) > 0:
+                    str3 = str2[0].get_text()
+                    skills = helper.extract_skills(str3, all_skills)
+                job["skills"] = skills
                 jobs.append(job)
     except Exception as e:
         traceback.print_exc()
         final_result = {}
         job_details = {}
     return jobs
+
+if __name__ =='__main__':
+    ans = get_jobs("Software Engineer", "Raleigh", 200, helper.get_all_skills())
+    print(ans)

@@ -9,16 +9,17 @@
 [![Github pull requests](https://img.shields.io/github/issues-pr/sak007/SRIJAS)](https://github.com/sak007/SRIJAS/pulls)
 [![Github closed pull requests](https://img.shields.io/github/issues-pr-closed/sak007/SRIJAS)](https://github.com/sak007/SRIJAS/pulls?q=is%3Apr+is%3Aclosed)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5646667.svg)](https://doi.org/10.5281/zenodo.5646667)
-[![Build Status](https://app.travis-ci.com/sak007/SRIJAS.svg?branch=main)](https://app.travis-ci.com/github/sak007/SRIJAS)
+[![Build Status](https://circleci.com/gh/sak007/SRIJAS/tree/main.svg?style=svg)](https://circleci.com/gh/sak007/SRIJAS/tree/main)
 [![codecov](https://codecov.io/gh/sak007/SRIJAS/branch/main/graph/badge.svg?token=Z9MGKKAXN6)](https://codecov.io/gh/sak007/SRIJAS)
 [![version](https://img.shields.io/badge/version-2.0-blue)](https://github.com/sak007/SRIJAS/releases/tag/v2.0)
-![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/unit_test.yml/badge.svg)
-![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/style_checker.yml/badge.svg)
-![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/main.yml/badge.svg)
-![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/code_formatter.yml/badge.svg)
-![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/code_cov.yml/badge.svg)
-![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/close_as_a_feature.yml/badge.svg)
-![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/Respost.yml/badge.svg)
+[![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/unit_test.yml/badge.svg)](https://github.com/sak007/SRIJAS/actions/workflows/unit_test.yml)
+[![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/style_checker.yml/badge.svg)](https://github.com/sak007/SRIJAS/actions/workflows/style_checker.yml)
+[![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/main.yml/badge.svg)](https://github.com/sak007/SRIJAS/actions/workflows/main.yml)
+[![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/code_formatter.yml/badge.svg)](https://github.com/sak007/SRIJAS/actions/workflows/code_formatter.yml)
+[![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/code_cov.yml/badge.svg)](https://github.com/sak007/SRIJAS/actions/workflows/code_cov.yml)
+[![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/close_as_a_feature.yml/badge.svg)](https://github.com/sak007/SRIJAS/actions/workflows/close_as_a_feature.yml)
+[![github workflow](https://github.com/sak007/SRIJAS/actions/workflows/Respost.yml/badge.svg)](https://github.com/sak007/SRIJAS/actions/workflows/Respost.yml)
+
 
 
 
@@ -31,7 +32,7 @@ https://user-images.githubusercontent.com/32881355/140453003-f6133bbc-b7ec-4d4a-
 
 
 
-# S.R.I.J.A.S.
+# Jobby
 ## Job Search was never this easy
 Smart-Resume-Interpreter-And-Job-Alert-System is an application that makes your job search easy and less frustrating.
 With SRIJAS, you can upload your resume and job which you want to search for. The application will browse Linkedin and Glassdoor websites to search for the jobs.
@@ -115,9 +116,9 @@ pip install -r requirements.txt
 
 
 ## Team Members
-  * Smayana Pidugu (spidugu@ncsu.edu)
-  * Gokul Krishna Koganti (gkogant@ncsu.edu)
-  * Rachana Kondabala (rkondab@ncsu.edu)
-  * Harikrishna Selvaraj (hselvar2@ncsu.edu)
-  * Kiran Bharadwaj Ganesh (kganesh4@ncsu.edu) 
+  * Ashok Kumar Selvam (aselvam@ncsu.edu)
+  * Rithik Jain (rjain25@ncsu.edu)
+  * Sri Athithya Kruth Babu (sbabu@ncsu.edu)
+  * Subramanian Venkatraman (svenka25@ncsu.edu)
+  * Zunaid Sorathiya (zhsoarth@ncsu.edu) 
 
