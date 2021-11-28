@@ -10,20 +10,14 @@ CREATE TABLE job_master (
   job_title varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE resume_master (
-  resume_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  resume_json longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-CREATE TABLE resume_skills (
-  resume_skill_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  resume_id int NOT NULL REFERENCES resume_master (resume_id),
-  skill_id int NOT NULL REFERENCES skill_master (skill_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 CREATE TABLE skill_master (
   skill_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   skill_title varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE job_board(
+  job_board_id int PRIMARY KEY AUTO_INCREMENT,
+  name varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE user_master (
@@ -33,24 +27,37 @@ CREATE TABLE user_master (
   user_email varchar(50) NOT NULL UNIQUE,
   user_pwd varchar(50) NOT NULL,
   location varchar(50) DEFAULT NULL,
-  user_preferred_job_id int NOT NULL REFERENCES job_master (job_id)
+  user_preferred_job_id int NOT NULL,
+  FOREIGN KEY (user_preferred_job_id) REFERENCES job_master (job_id) on delete cascade
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE resume_master (
+  resume_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  resume_json longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE resume_skills (
+  resume_skill_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  resume_id int NOT NULL,
+  skill_id int NOT NULL,
+  FOREIGN KEY (resume_id) REFERENCES resume_master (resume_id) on delete cascade,
+  FOREIGN KEY (skill_id) REFERENCES skill_master (skill_id) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE user_resume (
   user_resume_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  user_id int NOT NULL REFERENCES user_master (user_id),
-  resume_id int NOT NULL REFERENCES resume_master (resume_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-CREATE TABLE job_board(
-  job_board_id int PRIMARY KEY AUTO_INCREMENT,
-  name varchar(50) NOT NULL
+  user_id int NOT NULL,
+  resume_id int NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user_master (user_id) on delete cascade,
+  FOREIGN KEY (resume_id) REFERENCES resume_master (resume_id) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE user_notification(
-  user_id int NOT NULL REFERENCES user_master(user_id),
-  job_board_id varchar(50) NOT NULL REFERENCES job_board(job_board_id),
-  PRIMARY KEY(user_id, job_board_id)
+  user_id int NOT NULL,
+  job_board_id int NOT NULL,
+  PRIMARY KEY(user_id, job_board_id),
+  FOREIGN KEY (user_id) REFERENCES user_master (user_id) on delete cascade,
+  FOREIGN KEY (job_board_id) REFERENCES job_board (job_board_id) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO job_master (job_title) VALUES
