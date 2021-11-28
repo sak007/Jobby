@@ -104,7 +104,7 @@ if (isset($_POST['register'])) {
       $result = $conn->query($sql);
     }
   }
-  header('Location: register.php');
+  header('Location: home.php');
 }
 ?>
 </body>
