@@ -27,8 +27,20 @@ def run():
 
     user_skills_map = helper.get_user_skills_map()
     user_jobs = helper.filter_jobs(user_jobs, user_skills_map)
-    send_mail(user_jobs, user_info, user_skills_map)
+    count_per_dashboard = get_count_per_dashboard(job_map)
+    #print("#######################",count_per_dashboard)
+    send_mail(user_jobs, user_info, user_skills_map,count_per_dashboard)
 
+def get_count_per_dashboard(job_map):
+    job_count_per_db = {}
+    for p_id, p_info in job_map.items():
+        for key in p_info:
+            job_count_per_db[p_id] = len(p_info[key])
+    
+    #print("------------------------------------------")
+    #print("job count per dashboard :",job_count_per_db)
+    #print("------------------------------------------")
+    return job_count_per_db
 
 def generate_user_info(data):
     user_info = {}
@@ -46,12 +58,19 @@ def generate_user_job_board_list(data):
 
 def generate_user_jobs_mp(user_info, user_job_board_list, job_map):
     user_jobs = {}
+    #print("***")
+    # print("generate_user_jobs_mp -> job_map", job_map)
+    # print("user_job_board_list", user_job_board_list)
+    # print("user_info", user_info)
     for uj in user_job_board_list:
         user = uj[0]
+        #print("email", uj[0])
         if user not in user_jobs:
             user_jobs[user] = []
         user_job_req = (user_info[user][0], user_info[user][1])
+        #print("user_job_req", user_job_req)
         jobs = job_map[uj[1]][user_job_req]
+        #print("*********************8jobs", jobs)
         user_jobs[user].extend(jobs)
     return user_jobs
 
@@ -59,7 +78,7 @@ def generate_user_jobs_mp(user_info, user_job_board_list, job_map):
 # This function generates a map of job board and map of pair of role and location
 # and jobs with that role and Location
 # example:
-#     {'LINKEDIN' : {
+#     {'LINKEDIN' : {job['title']
 #         ('Software Developer Intern', 'Raleigh'): [{
 #             'title': ..,
 #             'url':..,
@@ -68,24 +87,31 @@ def generate_user_jobs_mp(user_info, user_job_board_list, job_map):
 #         }
 #     }
 def generate_job_map(job_board_role_mp, all_skills):
+    #print("job_board_role_mp",job_board_role_mp)
     job_map = {}
+    job_count_per_db = {}
     for jb in job_board_role_mp.keys():
         job_map[jb] = {}
         for rl in job_board_role_mp[jb]:
-            time.sleep(30)
+            time.sleep(15)
             j = []
             print("Scraping " + jb + " for " + rl[0] + " in " + rl[1] + "...")
+
             if (jb == 'LINKEDIN'):
+                role = rl[0]
+                location = rl[1]
+                print("************************LinkedIn scarpper*************************")
+                print("Role passed in : ", role)
+                print("Location :",location)
+                print("all_skills :",all_skills)
                 j = linkedin_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
-            elif (jb == 'INDEED'):
-                j = indeed_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
-            elif (jb == 'MONSTER'):
-                j = monster_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
-            elif (jb == 'GOINGLOBAL'):
-                j = going_global_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
-            elif (jb == 'SIMPLYHIRED'):
-                j = simplyhired_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
+                print("Data scraped from linkedin Website : \n",j)
+            #elif (jb == 'INDEED'):
+                #j = indeed_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
+            # elif (jb == 'MONSTER'):
+            #     j = monster_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
             job_map[jb][rl] = j
+    #print("job_map : ",job_map)
     return job_map
 
 
@@ -102,12 +128,12 @@ def generate_job_board_role_mp(user_job_board_list, user_info):
     return job_board_role_mp
 
 
-def send_mail(user_jobs, user_info, user_skills):
+def send_mail(user_jobs, user_info, user_skills,count_per_dashboard):
     port = 587
     smtp_server = "smtp.gmail.com"
-    login = "srijas.alerts@gmail.com"
-    password = "SRIJASGMAILPWD"
-    sender = "srijas.alerts@gmail.com"
+    login = "swaranjalimanik19@siesgst.ac.in"
+    password = "sefall2023"
+    sender = "swaranjalimanik19@siesgst.ac.in"
     for user in user_info.keys():
         receiver = user
         jobs = user_jobs[user]
@@ -118,15 +144,22 @@ def send_mail(user_jobs, user_info, user_skills):
         msg['To'] = receiver
         msg['Subject'] = 'SRIJAS - Job List'
 
-        body = """\n Hi """ + user_info[user][2] + """,\n Good News !! \n We have found """ + str(len(jobs)) + """ job that match your resume \n"""
+        body = """\n Hi """ + user_info[user][2] + """,\n Good News !! \n We have found top """ + str(len(jobs)) + """ jobs that matches your resume \n"""
         msg.attach(MIMEText(body, 'plain'))
 
         temp_body = ""
         html_start = """<html><head></head><body><p><ol>"""
+        temp_body += "Number of jobs found per dashboard : "+"<br>"
+        for i, (k, v) in enumerate(count_per_dashboard.items()):
+            #print(i, k, v)
+            temp_body += str(i+1) +". " + str(k) + ": "+ str(v) + "<br>"
+        temp_body += "\n"+"<br>"
         for job in jobs:
             temp_body += "<li>" + job['title'] + "<a href=\"" + job['url'] + "\"> Click to Apply </a><br>"
+            temp_body += "Company_Name : " +job['company_name']+"<br>"+"Posted On : "+job['job_posted_date']+"("+ job["days_after_posting"]+")"+"<br>"
             temp_body += "Match Percentage: " + helper.match_percentage(user_skills[user], job['skills']) + "<br>"
-            temp_body += "Matching Skills: " + helper.print_matching_skills(user_skills[user], job['skills'])
+            temp_body += "Matching Skills: " + helper.print_matching_skills(user_skills[user], job['skills']) + "<br>"
+            temp_body += "\n"+"<br>"
         html_end = """</ol></p></body> </html>"""
 
         html = html_start + temp_body + html_end
