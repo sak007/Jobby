@@ -19,7 +19,11 @@
     if ($_POST['inputEmail'] === "") {
         echo '<div class="alert alert-danger text-center small-box">Email is required</div>';
     }
-  } 
+    elseif ($_POST['inputEmail'] === "" ||  $_POST['password'] === "") {
+      echo '<div class="alert alert-danger text-center small-box">Password is required</div>';
+  } elseif (!filter_var($_POST['inputEmail'], FILTER_VALIDATE_EMAIL)) {
+      echo '<div class="alert alert-danger text-center small-box">Invalid email format</div>';
+  }}
  ?>
 <body>
   <div class="bg">
