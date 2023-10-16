@@ -15,6 +15,10 @@
       header('Location: home.php');
   }
   include "connectDB.php";
+  if (isset($_POST['submit'])) {
+    if ($_POST['inputEmail'] === "") {
+        echo '<div class="alert alert-danger text-center small-box">Email is required</div>';
+    } 
  ?>
 <body>
   <div class="bg">
