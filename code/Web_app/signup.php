@@ -131,5 +131,18 @@
 		</div>
 	</section>
 </div>
+<script>
+  function validateForm() {
+    const email = document.getElementById('inputEmail').value.trim();
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    document.getElementById('inputEmail').classList.remove('is-invalid');
+
+    if (!emailPattern.test(email)) {
+      document.getElementById('inputEmail').classList.add('is-invalid');
+      return false;
+    }
+    
+    return true;
+  }
 </body>
 </html>
