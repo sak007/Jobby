@@ -134,8 +134,19 @@
 <script>
   function validateForm() {
     const email = document.getElementById('inputEmail').value.trim();
+    const password = document.getElementById('password').value;
+
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const passwordPattern = /^(?=.\d)(?=.[a-zA-Z]).{8,}$/; // At least 8 characters with 1 number and 1 alphanumeric character
+
     document.getElementById('inputEmail').classList.remove('is-invalid');
+    document.getElementById('password').classList.remove('is-invalid');
+
+    if (!passwordPattern.test(password)) {
+      document.getElementById('password').classList.add('is-invalid');
+      alert('Password must be at least 8 characters with at least 1 number and 1 alphanumeric character.');
+      return false;
+    }
 
     if (!emailPattern.test(email)) {
       document.getElementById('inputEmail').classList.add('is-invalid');
@@ -144,5 +155,6 @@
     
     return true;
   }
+</script>
 </body>
 </html>
