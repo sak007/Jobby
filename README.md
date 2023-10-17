@@ -9,9 +9,9 @@
 [![codecov](https://codecov.io/gh/sak007/Jobby/branch/main/graph/badge.svg?token=Z9MGKKAXN6)](https://codecov.io/gh/sak007/Jobby)
 [![DOI](https://zenodo.org/badge/426291746.svg)](https://zenodo.org/badge/latestdoi/426291746)
 
-[![GitHub issues](https://img.shields.io/github/issues/sak007/Jobby)](https://github.com/sak007/Jobby/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub issues](https://img.shields.io/github/issues/Swaranjali167/Jobify)](https://github.com/Swaranjali167/Jobify/issues)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/Swaranjali167/Jobify)](https://github.com/Swaranjali167/Jobify/issues?q=is%3Aissue+is%3Aclosed)
-[![Github pull requests](https://img.shields.io/github/issues-pr/sak007/Jobby)](https://github.com/sak007/Jobby/pulls)
+[![Github pull requests](https://img.shields.io/github/issues-pr/Swaranjali167/Jobify)](https://github.com/Swaranjali167/Jobify/pulls?q=is%3Aopen+is%3Apr)
 [![Github closed pull requests](https://img.shields.io/github/issues-pr-closed/Swaranjali167/Jobify)](https://github.com/Swaranjali167/Jobify/pulls?q=is%3Apr+is%3Aclosed)
 
 [![github workflow](https://github.com/sak007/Jobby/actions/workflows/style_checker.yml/badge.svg)](https://github.com/sak007/Jobby/actions/workflows/style_checker.yml)
