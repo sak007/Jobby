@@ -1,0 +1,37 @@
+.bg {
+  background-image: url("background.jpeg");
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+
+/* Add this CSS to change the background color of the header navbar */
+
+.header {
+  background-color: #3498db !important;
+  /* Change this color to your desired color */
+  padding: 10px;
+  /* Adjust the padding as needed */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  max-height: 50px;
+  /* Adjust the height of the logo image */
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+  /* Change the text color to contrast with the background */
+  margin: 0 10px;
+  /* Add spacing between navigation links */
+}
+
+.header a.active {
+  font-weight: bold;
+  /* Style the active link differently if needed */
+}
