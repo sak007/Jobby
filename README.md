@@ -128,5 +128,5 @@ coverage report
   * Neha Jagtap (njagtap@ncsu.edu)
   * Swaranjali Jadhav (smjadhav@ncsu.edu)
   * Pranjali Jadhav(psjadhav@ncsu.edu)
-  * Shardul Thakur (sskhande@ncsu.edu)
+  * Shardul Khandekar (sskhande@ncsu.edu)
   
