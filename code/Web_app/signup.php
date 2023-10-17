@@ -143,6 +143,8 @@
     const password = document.getElementById('password').value;
     const location = document.getElementById('location').value;
     const jobType = document.getElementById('inputJobTypeId').value;
+    const resume = document.getElementById('uploadResume').value;
+    const resumeExtension = resume.slice(((resume.lastIndexOf(".") - 1) >>> 0) + 2);
 
 
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -153,8 +155,7 @@
     document.getElementById('password').classList.remove('is-invalid');
     document.getElementById('location').classList.remove('is-invalid');
     document.getElementById('inputJobTypeId').classList.remove('is-invalid');
-
-
+    document.getElementById('uploadResume').classList.remove('is-invalid');
 
     if (name === '') {
       document.getElementById('inputName').classList.add('is-invalid');
@@ -179,6 +180,17 @@
     if (jobType === 'Choose...') {
       document.getElementById('inputJobTypeId').classList.add('is-invalid');
       alert('Job Type is required');
+      return false;
+    }
+    if (resume === '') {
+      document.getElementById('uploadResume').classList.add('is-invalid');
+      alert('Resume is required');
+      return false;
+    }
+
+    if (resumeExtension.toLowerCase() !== 'pdf') {
+      document.getElementById('uploadResume').classList.add('is-invalid');
+      alert('Resume should be in PDF format.');
       return false;
     }
 
