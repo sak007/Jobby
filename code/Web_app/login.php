@@ -96,5 +96,17 @@
 <div align="center">Made with <span style="color: #e25555;">&hearts;</span>. Contribute on <a href="https://github.com/sak007/SRIJAS" class="text-dark" target="_blank">GitHub</a>.</div>
 <br>
 </div>
+<script>
+    var showPasswordCheckbox = document.getElementById("showPassword");
+    var passwordInput = document.getElementById("password");
+
+    showPasswordCheckbox.addEventListener("change", function () {
+        if (showPasswordCheckbox.checked) {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    });
+  </script>
 </body>
 </html>
