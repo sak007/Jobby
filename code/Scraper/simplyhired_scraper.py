@@ -19,6 +19,10 @@ def get_jobs(role, location, count_jobs, all_skills):
     # print(URL)
 
     page = requests.get(URL)
+    if page.status_code != 200:
+        #print(url)
+        print("Connection Failed!")
+        print("-------------------------------------")
     soup = BeautifulSoup(page.content, 'html.parser')
     # print(soup.encode("utf-8"))
 
