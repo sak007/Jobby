@@ -19,16 +19,18 @@
 [![github workflow](https://github.com/sak007/Jobby/actions/workflows/code_cov.yml/badge.svg)](https://github.com/sak007/Jobby/actions/workflows/code_cov.yml)
 
 
-# Phase 3
-Introducting Jobby, your friendly Job aggregator. Jobby would do anything for you, and we mean it.
+# Project 2
+=Jobify: Your Gateway to Endless Opportunities
 
 ![](https://media.giphy.com/media/12df9hrmdliYc8/giphy.gif)
 
 
-# Jobby : Job Hunting Made Easy
-Jobby is your go-to one stop application that makes your job search easy and less frustrating.
-With Jobby, you can upload your resume and job which you want to search for. The application will browse multiple Job Portals to search for jobs that best match your skills and requirement.
-The portal links of the jobs that matches with your skills, will be sent to you via email everyday at **10:30am EST**. You'll never miss another job posting.
+# Jobify: Job Hunting Made Easy
+"Introducing Jobify, your ultimate destination for simplifying your job hunt, making it a breeze rather than a burden".
+
+With Jobify, you have the power to upload your resume and specify your desired job criteria. Our innovative application diligently scours numerous job portals, ensuring that it identifies the positions that align perfectly with your skills and requirements.
+
+What sets us apart is our commitment to keeping you in the loop. Every day at 10:30 AM EST, you'll receive tailored job opportunities straight to your email inbox. Say goodbye to missed job postings and hello to the opportunities you've been searching for."
 
 This is our submission for the Project for Software Engineering CSC 510 Fall 2021.
 
@@ -123,7 +125,7 @@ coverage report
 
 
 ## Team Members
-  * Neha Jagtap (njagtap.edu)
+  * Neha Jagtap (njagtap@ncsu.edu)
   * Swaranjali Jadhav (smjadhav@ncsu.edu)
   * Pranjali Jadhav(psjadhav@ncsu.edu)
   * Shardul Thakur (sskhande@ncsu.edu)
