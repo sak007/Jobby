@@ -75,9 +75,9 @@
                     }
 
                     // Display User Details
+                    // Display User Details
                     echo "<td width='80' style='text-align:center;'>";
-                    echo "<b>First Name</b>\t\t\t&emsp;" . ucfirst($namearray[0]) . "<br>";
-                    echo "<b>Last Name</b>\t\t\t&emsp;" . ucfirst($namearray[1]) . "<br>";
+                    echo "<b>Name</b> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;" . ucfirst($namearray[0]) . "<br>";
                     echo "<b>User Email</b>\t\t\t&emsp;", $user_email;
                     echo "</td>";
 
