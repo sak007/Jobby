@@ -138,14 +138,21 @@
 </div>
 <script>
   function validateForm() {
+    const name = document.getElementById('inputName').value.trim();
     const email = document.getElementById('inputEmail').value.trim();
     const password = document.getElementById('password').value;
 
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const passwordPattern = /^(?=.\d)(?=.[a-zA-Z]).{8,}$/; // At least 8 characters with 1 number and 1 alphanumeric character
 
+    document.getElementById('inputName').classList.remove('is-invalid');
     document.getElementById('inputEmail').classList.remove('is-invalid');
     document.getElementById('password').classList.remove('is-invalid');
+
+    if (name === '') {
+      document.getElementById('inputName').classList.add('is-invalid');
+      return false;
+    }
 
     if (!passwordPattern.test(password)) {
       document.getElementById('password').classList.add('is-invalid');
