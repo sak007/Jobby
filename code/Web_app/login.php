@@ -23,7 +23,31 @@
       echo '<div class="alert alert-danger text-center small-box">Password is required</div>';
   } elseif (!filter_var($_POST['inputEmail'], FILTER_VALIDATE_EMAIL)) {
       echo '<div class="alert alert-danger text-center small-box">Invalid email format</div>';
-  }}
+  }
+  else {
+    $inputEmail = $_POST['inputEmail'];
+    $sql = "SELECT user_pwd FROM user_master WHERE user_email=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $inputEmail);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $checkPwd = password_verify($_POST['password'], $row["user_pwd"]);
+        if ($checkPwd) {
+            $_SESSION['user'] = $inputEmail;
+            header('Location: home.php');
+            exit();
+        } else {
+            echo '<div class="alert alert-danger text-center small-box">Wrong password</div>';
+        }
+    } else {
+        echo '<div class="alert alert-danger text-center small-box">User not found</div>';
+    }
+}
+$conn->close();
+}
  ?>
 <body>
   <div class="bg">
