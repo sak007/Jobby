@@ -142,6 +142,8 @@
     const email = document.getElementById('inputEmail').value.trim();
     const password = document.getElementById('password').value;
     const location = document.getElementById('location').value;
+    const jobType = document.getElementById('inputJobTypeId').value;
+
 
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const passwordPattern = /^(?=.\d)(?=.[a-zA-Z]).{8,}$/; // At least 8 characters with 1 number and 1 alphanumeric character
@@ -150,6 +152,8 @@
     document.getElementById('inputEmail').classList.remove('is-invalid');
     document.getElementById('password').classList.remove('is-invalid');
     document.getElementById('location').classList.remove('is-invalid');
+    document.getElementById('inputJobTypeId').classList.remove('is-invalid');
+
 
 
     if (name === '') {
@@ -170,6 +174,11 @@
     if (location === 'Select City...') {
       document.getElementById('location').classList.add('is-invalid');
       alert('Location is required');
+      return false;
+    }
+    if (jobType === 'Choose...') {
+      document.getElementById('inputJobTypeId').classList.add('is-invalid');
+      alert('Job Type is required');
       return false;
     }
 
