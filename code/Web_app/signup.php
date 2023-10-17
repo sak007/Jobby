@@ -79,6 +79,11 @@
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="inputLocation">Password</label>
 									<input id="password" type="password" class="form-control" name="password" placeholder="Enter your Password" required>
+                  <div class="input-group-append">
+                      <button type="button" class="btn btn-link" id="showPasswordToggle" onclick="togglePasswordVisibility()">
+                        <i class="far fa-eye" id="eyeIcon"></i>
+                      </button>
+                    </div>
 								  <div class="invalid-feedback"> Password is required </div>
 								</div>
 
@@ -155,6 +160,22 @@
     
     return true;
   }
+
+function togglePasswordVisibility() {
+  const passwordField = document.getElementById('password');
+  const eyeIcon = document.getElementById('eyeIcon');
+
+  if (passwordField.type === 'password') {
+    passwordField.type = 'text';
+    eyeIcon.classList.remove('far', 'fa-eye');
+    eyeIcon.classList.add('far', 'fa-eye-slash');
+  } else {
+    passwordField.type = 'password';
+    eyeIcon.classList.remove('far', 'fa-eye-slash');
+    eyeIcon.classList.add('far', 'fa-eye');
+  }
+}
+
 </script>
 </body>
 </html>
