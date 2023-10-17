@@ -23,7 +23,7 @@
   <img src="logo.jpg" alt="logo">
   <div class="header-right">
     <a href="home.php">Home</a>
-    <a href="register.php">Register</a>
+    <a href="register.php">Job Board</a>
     <a class="active" href="updateResume.php">Upload Resume</a>
     <a href="logout.php">Logout</a>
   </div>
