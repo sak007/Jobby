@@ -1,6 +1,6 @@
 ## Phase 3 Project Presentation - [Video](https://drive.google.com/file/d/1KCsdtXT9xtVYV2-zRX0HUUuTJPHlqG4b/view?usp=sharing) (NCSU account required to access)
 
-![Jobby_Logo](https://www.flickr.com/photos/199366397@N04/53268853935/in/dateposted-public/)
+![Jobby_Logo](<a data-flickr-embed="true" href="https://www.flickr.com/photos/199366397@N04" title=""><img src="https://live.staticflickr.com/65535/53268853935_20612ec5a2_q.jpg" width="640" height="480" alt=""/></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>)
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
