@@ -25,14 +25,14 @@ Jobify: Your Gateway to Endless Opportunities
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWFncjVtZHdpczI0dG9jZ2tiM3U4dWo4eGpxNDd2OTlycWZjaDhlYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R0JAbyWBq1I5zX80E4/giphy.gif)
 
 
-# Jobify: Job Hunting Made Easy
+**Jobify: Your Gateway to Endless Opportunities**
 "Introducing Jobify, your ultimate destination for simplifying your job hunt, making it a breeze rather than a burden".
 
 With Jobify, you have the power to upload your resume and specify your desired job criteria. Our innovative application diligently scours numerous job portals, ensuring that it identifies the positions that align perfectly with your skills and requirements.
 
 What sets us apart is our commitment to keeping you in the loop. Every day at 10:30 AM EST, you'll receive tailored job opportunities straight to your email inbox. Say goodbye to missed job postings and hello to the opportunities you've been searching for."
 
-This is our submission for the Project for Software Engineering CSC 510 Fall 2021.
+This is our submission for the Project for Software Engineering CSC 510 Fall 2023.
 
 # Contents
   <ol>
