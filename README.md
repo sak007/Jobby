@@ -26,6 +26,7 @@ Jobify: Your Gateway to Endless Opportunities
 
 
 **Jobify: Your Gateway to Endless Opportunities**
+
 "Introducing Jobify, your ultimate destination for simplifying your job hunt, making it a breeze rather than a burden".
 
 With Jobify, you have the power to upload your resume and specify your desired job criteria. Our innovative application diligently scours numerous job portals, ensuring that it identifies the positions that align perfectly with your skills and requirements.
