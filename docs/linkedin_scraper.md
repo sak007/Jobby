@@ -11,10 +11,11 @@ The file contains only one function
 def get_jobs(role, location, no_of_jobs_to_retrieve, all_skills):
 , which uses the BeautifulSoup library in Python to scrape job data from the linkedin.com website, and then proceeds to retrieve the following details for all jobs found:
 
-1. Job Position
+1. Job Title
 2. Company Name
 3. Job URL
 4. Job skills matching with all_skills
+5. Job Posted Date
 
 # How to run this feature?
 This file is run when the user selects the linkedin scraper in web app. The file is run to scrape jobs based on the user location, and then it matches the job skills with the user's skills and returns the matching skills for each job position. 
