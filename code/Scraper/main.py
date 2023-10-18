@@ -155,7 +155,10 @@ def send_mail(user_jobs, user_info, user_skills,count_per_dashboard):
         temp_body += "\n"+"<br>"
         for job in jobs:
             temp_body += "<li>" + job['title'] + "<a href=\"" + job['url'] + "\"> Click to Apply </a><br>"
-            temp_body += "Company_Name : " +job['company_name']+"<br>"+"Posted On : "+job['job_posted_date']+"("+ job["days_after_posting"]+")"+"<br>"
+            if job['job_posted_date'] and job["days_after_posting"]:
+                temp_body += "Company_Name : " +job['company_name']+"<br>"+"Posted On : "+job['job_posted_date']+"("+ job["days_after_posting"]+")"+"<br>"
+            else:
+                temp_body += "Company_Name : " +job['company_name']+"<br>"
             temp_body += "Match Percentage: " + helper.match_percentage(user_skills[user], job['skills']) + "<br>"
             temp_body += "Matching Skills: " + helper.print_matching_skills(user_skills[user], job['skills']) + "<br>"
             temp_body += "\n"+"<br>"
