@@ -1,4 +1,4 @@
-<?php session_start() ;
+<?php session_start();
 include('connectDB.php');
 ?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -8,6 +8,7 @@ include('connectDB.php');
 
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -27,93 +28,99 @@ include('connectDB.php');
 
     <title>Login Form</title>
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-        <a class="navbar-brand" href="#">Password Reset Form</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+        <div class="container">
+            <a class="navbar-brand" href="#">Password Reset Form</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
 
-<main class="login-form">
-    <div class="cotainer">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Reset Your Password</div>
-                    <div class="card-body">
-                        <form action="#" method="POST" name="login">
+    <main class="login-form">
+        <div class="cotainer">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Reset Your Password</div>
+                        <div class="card-body">
+                            <form action="#" method="POST" name="login">
 
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Enter new password</label>
-                                <div class="col-md-6">
-                                    <input type="password" id="password1" class="form-control" name="password1" required autofocus>
-                                    <i class="bi bi-eye-slash" id="togglePassword1"></i>
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Enter new
+                                        password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="password1" class="form-control" name="password1"
+                                            required autofocus>
+                                        <i class="bi bi-eye-slash" id="togglePassword1"></i>
+                                    </div>
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Confirm new
+                                        password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="password2" class="form-control" name="password2"
+                                            required autofocus>
+                                        <i class="bi bi-eye-slash" id="togglePassword2"></i>
+                                    </div>
                                 </div>
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Confirm new password</label>
-                                <div class="col-md-6">
-                                    <input type="password" id="password2" class="form-control" name="password2" required autofocus>
-                                    <i class="bi bi-eye-slash" id="togglePassword2"></i>
-                                </div>
-                            </div>
 
-                            <div class="col-md-6 offset-md-4">
-                                <input type="submit" value="Reset" name="reset">
-                            </div>
+                                <div class="col-md-6 offset-md-4">
+                                    <input type="submit" value="Reset" name="reset">
+                                </div>
+                        </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
 
-</main>
+    </main>
 </body>
+
 </html>
 <?php
-    if(isset($_POST["reset"])){
-        include('connectDB.php');
-        $psw = $_POST["password1"];
-        $psw1 = $_POST["password2"];
-        $token = $_SESSION['token'];
-        $Email = $_SESSION['email'];
+if (isset($_POST["reset"])) {
+    include('connectDB.php');
+    $psw = $_POST["password1"];
+    $psw1 = $_POST["password2"];
+    $token = $_SESSION['token'];
+    $Email = $_SESSION['email'];
 
-        $hash = password_hash( $psw , PASSWORD_DEFAULT );
+    $hash = password_hash($psw, PASSWORD_DEFAULT);
 
-        $sql = mysqli_query($conn, "SELECT * FROM user_master WHERE user_email='$Email'");
-        $query = mysqli_num_rows($sql);
-  	    $fetch = mysqli_fetch_assoc($sql);
+    $sql = mysqli_query($conn, "SELECT * FROM user_master WHERE user_email='$Email'");
+    $query = mysqli_num_rows($sql);
+    $fetch = mysqli_fetch_assoc($sql);
 
-        if($Email){
-            if ($psw!=$psw1){
-                ?>
-                <script>
-                    alert("<?php echo "Password do not match. Both password should be same"?>");
-                </script>
-                <?php
-            }
-            else{
-                $new_pass = $hash;
-                mysqli_query($conn, "UPDATE user_master SET user_pwd='$new_pass' WHERE user_email='$Email'");
-                ?>
-                <script>
-                    window.location.replace("login.php");
-                    alert("<?php echo "Your password has been succesful reset. Please login into your account with new password"?>");
-                </script>
-                <?php
-            } 
-        }else{
+    if ($Email) {
+        if ($psw != $psw1) {
             ?>
             <script>
-                alert("<?php echo "Please try again"?>");
+                alert("<?php echo "Password do not match. Both password should be same" ?>");
+            </script>
+            <?php
+        } else {
+            $new_pass = $hash;
+            mysqli_query($conn, "UPDATE user_master SET user_pwd='$new_pass' WHERE user_email='$Email'");
+            ?>
+            <script>
+                window.location.replace("login.php");
+                alert("<?php echo "Your password has been succesful reset. Please login into your account with new password" ?>");
             </script>
             <?php
         }
+    } else {
+        ?>
+        <script>
+            alert("<?php echo "Please try again" ?>");
+        </script>
+        <?php
     }
+}
 
 ?>
 <script>
@@ -122,20 +129,20 @@ include('connectDB.php');
     const password1 = document.getElementById('password1');
     const password2 = document.getElementById('password2');
 
-    toggle1.addEventListener('click', function(){
-        if(password1.type === "password"){
+    toggle1.addEventListener('click', function () {
+        if (password1.type === "password") {
             password1.type = 'text';
-        }else{
+        } else {
             password1.type = 'password';
         }
         this.classList.toggle('bi-eye');
 
     });
-    
-    toggle2.addEventListener('click', function(){
-        if(password2.type === "password"){
+
+    toggle2.addEventListener('click', function () {
+        if (password2.type === "password") {
             password2.type = 'text';
-        }else{
+        } else {
             password2.type = 'password';
         }
         this.classList.toggle('bi-eye');
