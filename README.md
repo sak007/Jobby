@@ -1,6 +1,6 @@
 ## Phase 3 Project Presentation - [Video](https://drive.google.com/file/d/1KCsdtXT9xtVYV2-zRX0HUUuTJPHlqG4b/view?usp=sharing) (NCSU account required to access)
 
-![Jobby_Logo](<a data-flickr-embed="true" href="https://www.flickr.com/photos/199366397@N04" title=""><img src="https://live.staticflickr.com/65535/53268853935_20612ec5a2_q.jpg" width="640" height="480" alt=""/></a>
+(<a data-flickr-embed="true" href="https://www.flickr.com/photos/199366397@N04" title=""><img src="https://live.staticflickr.com/65535/53268853935_20612ec5a2_q.jpg" width="640" height="480" alt=""/></a>
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -74,7 +74,7 @@ https://user-images.githubusercontent.com/28624935/143986517-158d58bf-e920-431f-
 
 🔱: Installation Guide
 ---
-- After Cloning the Github repository (git clone https://github.com/sak007/Jobby.git) to a desired location on your computer. Please follow the steps given below to set up the project to a working condition.
+- After Cloning the Github repository (git clone https://github.com/Swaranjali167/Jobify) to a desired location on your computer. Please follow the steps given below to set up the project to a working condition.
 - Host your MySQL DB using an application by following these steps.
   * **Create a MySQL instance in your local** 
     + [Installation instruction for local](https://dev.mysql.com/doc/mysql-getting-started/en/#mysql-getting-started-installing)
@@ -94,8 +94,8 @@ This will install all the required packages from requirements.txt and create a p
       <img width="607" alt="xampp-conf" src="https://user-images.githubusercontent.com/28624935/143979475-f2d4b1d6-297c-43ff-8cb5-d243e59ebc57.png">
     + Click the Apache(httpd.conf) file and add the your project's directory under "DocumentRoot:"
       ```
-        DocumentRoot ".../Jobby/code/Web_app"
-        <Directory ".../Jobby/code/Web_app">
+        DocumentRoot ".../Jobify/code/Web_app"
+        <Directory ".../Jobify/code/Web_app">
       ```
 - After setting up the project, create executable permissions for the following files - run_notifier.sh and start_server.sh
   * To run the job notifier once -> execute run_notifier.sh
@@ -103,7 +103,7 @@ This will install all the required packages from requirements.txt and create a p
 
 - You should be good to start working on the application now.
 
-![Success](https://tenor.com/view/success-kid-hells-yes-i-did-it-fuck-yeah-success-gif-5207407.gif)
+![Success](<iframe src="https://giphy.com/embed/AgrfqPt5AyiTm" width="480" height="284" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/meme-update-success-AgrfqPt5AyiTm">via GIPHY</a></p>)
 
 ## Testing
 
