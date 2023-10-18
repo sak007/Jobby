@@ -22,7 +22,7 @@
 # Project 2
 =Jobify: Your Gateway to Endless Opportunities
 
-![](https://media.giphy.com/media/12df9hrmdliYc8/giphy.gif)
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWFncjVtZHdpczI0dG9jZ2tiM3U4dWo4eGpxNDd2OTlycWZjaDhlYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R0JAbyWBq1I5zX80E4/giphy.gif)
 
 
 # Jobify: Job Hunting Made Easy
