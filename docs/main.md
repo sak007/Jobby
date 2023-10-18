@@ -42,7 +42,10 @@ example:
 This function takes the user's selected jobs, their information like email address and their skills and then uses the python MIME SMTP libraries to send them an email alerts with the jobs that match their skills.
 
 8. def get_user_notification_info(connection):
-Takes 1 argument - connection object to the database and gets all users' details including email address, which are returned as a cursor. 
+Takes 1 argument - connection object to the database and gets all users' details including email address, which are returned as a cursor.
+
+9. def get_count_per_dashboard(job_map):
+Takes job_map as argument and generates the number of jobs per dashboard.
 
 
 # How to run this feature?
