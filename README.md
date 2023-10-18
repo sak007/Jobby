@@ -65,12 +65,12 @@ https://user-images.githubusercontent.com/28624935/143986517-158d58bf-e920-431f-
 
 ## Work for the upcoming iteration
 
-- Add more Job Boards.
-- Granularize the filter - add filters to search job by Degree requirements, Visa Sponsorships, Years of Experience and Salary Range
-- Implement SSO Authentication with services like Gmail, Github, Indeed etc.
-- Create a Dashboard in the home page to show number of jobs per dashboard, best match percentage per job board.
-- Allow user to choose method of receiving notification - Email or SMS
-- Cache the scraped Job data for a period of time to avoid duplicates
+- Include additional job posting platforms.
+- Enhance filtering options by incorporating criteria such as degree prerequisites, visa sponsorship availability, years of experience required, and salary ranges.
+- Integrate Single Sign-On (SSO) authentication with popular services like Gmail, Github, and Indeed.
+- Develop a homepage dashboard to display the count of job listings per job board and the best match percentage for each posting.
+- Give users the option to select their preferred notification method, whether it's via email or SMS.
+- Implement job data caching for a specified duration to prevent redundant entries.
 
 🔱: Installation Guide
 ---
