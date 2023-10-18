@@ -20,7 +20,7 @@
 
 
 # Project 2
-=Jobify: Your Gateway to Endless Opportunities
+Jobify: Your Gateway to Endless Opportunities
 
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWFncjVtZHdpczI0dG9jZ2tiM3U4dWo4eGpxNDd2OTlycWZjaDhlYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R0JAbyWBq1I5zX80E4/giphy.gif)
 
@@ -103,7 +103,7 @@ This will install all the required packages from requirements.txt and create a p
 
 - You should be good to start working on the application now.
 
-![Success](<iframe src="https://giphy.com/embed/AgrfqPt5AyiTm" width="480" height="284" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/meme-update-success-AgrfqPt5AyiTm">via GIPHY</a></p>)
+![](https://giphy.com/gifs/meme-update-success-AgrfqPt5AyiTm)
 
 ## Testing
 
