@@ -28,3 +28,9 @@ not limited to database updating, test case verification, file transfer, pdf par
 
 9. **connectDB.php**
 - This file helps establish the connection between the website and backend DB, using the parameters.json file.
+
+10. **forgot.php**
+- This file is used to send password recovery link to the user on his/her email ID in case of forgotten password.
+
+11. **reset-password.php**
+- This file helps the user to reset the old password by providing a new one.
