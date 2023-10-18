@@ -58,6 +58,8 @@ https://user-images.githubusercontent.com/28624935/143986517-158d58bf-e920-431f-
 
 - UI and UX: We completely changed the UI and UX of the Job aggregator to make it easier for user as well as owner to manage, edit and work smoothly. The new UI uses minimalism and provides only required data in a concise format.
 
+- Validations: We validated input for password, email, name, job type, and location for better user experience and for having clean data.
+
 - Edit your Resume Feature: User's resume keeps changing from time to time. We identified that the previous iteration did not provide an option for the user to update the resume. We decided it was important for the job seeker to have the ease of access instead of creating multiple accounts for every resume change.
 
 - Right to be forgotten: Users must have the choice to remove their data from any application without leaving any trace as and when they wish to do so. This was another feature we identified missing from the previous iteration which we felt was paramount and allowed user to delete account at any point.
