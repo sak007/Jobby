@@ -373,5 +373,3 @@ try{
   echo "Code did not execute - caught exception in function call->function executer: ".$e->getMessage()."<br>";
 }
 }
-
-?>
