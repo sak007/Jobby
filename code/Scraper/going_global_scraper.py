@@ -43,7 +43,7 @@ def get_jobs(role, location, no_of_jobs_to_retrieve, all_skills, country=""):
                 job["extras"] = raw_job_data.find_next("div", {"class": "job-extras"}).get_text()
                 job["skills"] = helper.extract_skills(job["description"], all_skills)
                 job["company_name"] = comp_data_t.text
-                job["job_posted_date"] = ""
+                job["job_posted_date"] = "NA"
                 job["days_after_posting"] = ""
                 no_of_jobs_to_retrieve -= 1
                 jobs.append(job)
