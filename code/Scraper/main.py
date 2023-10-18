@@ -16,8 +16,6 @@ def run():
     data = get_user_notification_info(connection)
     user_info = generate_user_info(data)
     user_job_board_list = generate_user_job_board_list(data)
-    # print(user_info)
-    # print(user_job_board_list)
     job_board_role_mp = generate_job_board_role_mp(user_job_board_list, user_info)
 
     all_skills = helper.get_all_skills()
@@ -28,18 +26,15 @@ def run():
     user_skills_map = helper.get_user_skills_map()
     user_jobs = helper.filter_jobs(user_jobs, user_skills_map)
     count_per_dashboard = get_count_per_dashboard(job_map)
-    #print("#######################",count_per_dashboard)
     send_mail(user_jobs, user_info, user_skills_map,count_per_dashboard)
 
 def get_count_per_dashboard(job_map):
     job_count_per_db = {}
     for p_id, p_info in job_map.items():
-        for key in p_info:
-            job_count_per_db[p_id] = len(p_info[key])
-    
-    #print("------------------------------------------")
-    #print("job count per dashboard :",job_count_per_db)
-    #print("------------------------------------------")
+        if p_info:
+            for key in p_info:
+                if p_info[key]:
+                    job_count_per_db[p_id] = len(p_info[key])
     return job_count_per_db
 
 def generate_user_info(data):
@@ -58,20 +53,14 @@ def generate_user_job_board_list(data):
 
 def generate_user_jobs_mp(user_info, user_job_board_list, job_map):
     user_jobs = {}
-    #print("***")
-    # print("generate_user_jobs_mp -> job_map", job_map)
-    # print("user_job_board_list", user_job_board_list)
-    # print("user_info", user_info)
     for uj in user_job_board_list:
         user = uj[0]
-        #print("email", uj[0])
         if user not in user_jobs:
             user_jobs[user] = []
         user_job_req = (user_info[user][0], user_info[user][1])
-        #print("user_job_req", user_job_req)
-        jobs = job_map[uj[1]][user_job_req]
-        #print("*********************8jobs", jobs)
-        user_jobs[user].extend(jobs)
+        if job_map[uj[1]][user_job_req]:
+            jobs = job_map[uj[1]][user_job_req]
+            user_jobs[user].extend(jobs)
     return user_jobs
 
 
@@ -98,22 +87,32 @@ def generate_job_map(job_board_role_mp, all_skills):
             print("Scraping " + jb + " for " + rl[0] + " in " + rl[1] + "...")
 
             if (jb == 'LINKEDIN'):
-                role = rl[0]
-                location = rl[1]
-                print("************************LinkedIn scarpper*************************")
-                print("Role passed in : ", role)
-                print("Location :",location)
-                print("all_skills :",all_skills)
                 j = linkedin_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
-                print("Data scraped from linkedin Website : \n",j)
-            #elif (jb == 'INDEED'):
-                #j = indeed_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
-            # elif (jb == 'MONSTER'):
-            #     j = monster_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
+                if j:
+                    print("Data scraped from linkedin Website successfully!!\n")
+                    print("---------------------------------------------------")
+            elif (jb == 'INDEED'):
+                j = indeed_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
+                if j:
+                    print("Data scraped from Indeed Website successfully!!\n")
+                    print("---------------------------------------------------")
+            elif (jb == 'MONSTER'):
+                j = monster_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
+                if j:
+                    print("Data scraped from Monster Website successfully!!\n")
+                    print("---------------------------------------------------")
+            elif (jb == 'SIMPLYHIRED'):
+                j = simplyhired_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
+                if j:
+                    print("Data scraped from simplyhired Website successfully!!\n")
+                    print("---------------------------------------------------")
+            elif (jb == 'GOINGLOBAL'):
+                j = going_global_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
+                if j:
+                    print("Data scraped from Going global Website successfully!!\n")
+                    print("---------------------------------------------------")
             job_map[jb][rl] = j
-    #print("job_map : ",job_map)
     return job_map
-
 
 # This function generates a map of job boards and list of pair of job role and location.
 # example:
