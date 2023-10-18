@@ -9,4 +9,3 @@
     $conn -> query($query);
   }
   header('Location: logout.php');
-?>
