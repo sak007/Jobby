@@ -20,7 +20,6 @@ def get_jobs(role, location, no_of_jobs_to_retrieve, all_skills, country=""):
     url = url.replace(' ', '%20')
     k1 = requests.get(url)
     if k1.status_code != 200:
-        #print(url)
         print("Connection Failed!")
         print("-------------------------------------")
     # Get the main content from the webpage to scrap
@@ -28,12 +27,14 @@ def get_jobs(role, location, no_of_jobs_to_retrieve, all_skills, country=""):
 
     # Get the raw data of all jobs listed
     all_jobs = main_content.find_all("div", {"class": "job-search-listing"})
+    comp_data = main_content.find_all("div", {"class":"job-meta"})
 
     jobs = []
     try:
         for i in range(len(all_jobs)):
             if no_of_jobs_to_retrieve > 0:
                 raw_job_data = all_jobs[i]
+                comp_data_t =  comp_data[i]
                 job = {}
                 job["title"] = raw_job_data.h3.get_text()
                 job["url"] = raw_job_data.h3.a["href"]
@@ -41,6 +42,9 @@ def get_jobs(role, location, no_of_jobs_to_retrieve, all_skills, country=""):
                 job["company"] = raw_job_data.find_next("div", {"class": "job-meta"}).get_text()
                 job["extras"] = raw_job_data.find_next("div", {"class": "job-extras"}).get_text()
                 job["skills"] = helper.extract_skills(job["description"], all_skills)
+                job["company_name"] = comp_data_t.text
+                job["job_posted_date"] = ""
+                job["days_after_posting"] = ""
                 no_of_jobs_to_retrieve -= 1
                 jobs.append(job)
     except Exception:
