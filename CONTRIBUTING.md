@@ -78,7 +78,7 @@ You can contribute in the following ways to our code:
 - Follow the steps as mentioned and
 **You’re all set!**
 <br></br>
-![Success](https://tenor.com/view/success-kid-hells-yes-i-did-it-fuck-yeah-success-gif-5207407.gif)
+![Success](https://media.giphy.com/media/AgrfqPt5AyiTm/giphy.gif)
 
 <br></br>
 ### Credit for the CONTRIBUTING file
