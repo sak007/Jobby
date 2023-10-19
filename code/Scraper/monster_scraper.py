@@ -23,25 +23,27 @@ def get_jobs(role, location, no_of_jobs_to_retrieve, all_skills):
 
     response = requests.request("POST", url, headers=headers, data=payload)
     jobs_response = {}
-    if response.status_code == 200:
-        jobs_response = json.loads(response.text)
+    if response.status_code != 200:
+        print("Connection Failed!")
+        print("-------------------------------------")
+        #print("Monster API ResponseCode:" + str(response.status_code) + ", ErrorMessage: " + response.text)
+        #jobs_response['totalSize'] = 0
     else:
-        print("Monster API ResponseCode:" + response.status_code + ", ErrorMessage: " + response.text)
-        jobs_response['totalSize'] = 0
-    jobs = []
-    job_details = {}
-    try:
-        for i in range(int(jobs_response['totalSize'])):
-            job_data = jobs_response['jobResults'][i]["normalizedJobPosting"]
-            if no_of_jobs_to_retrieve > 0:
-                job = {}
-                job["title"] = job_data['title']
-                job["url"] = job_data['url']
-                job_details[job["url"]] = [job["title"], ""]
-                no_of_jobs_to_retrieve -= 1
-                str3 = job_data['description']
-                job["skills"] = helper.extract_skills(str3, all_skills)
+        jobs_response = json.loads(response.text)
+        jobs = []
+        job_details = {}
+        try:
+            for i in range(int(jobs_response['totalSize'])):
+                job_data = jobs_response['jobResults'][i]["normalizedJobPosting"]
+                if no_of_jobs_to_retrieve > 0:
+                    job = {}
+                    job["title"] = job_data['title']
+                    job["url"] = job_data['url']
+                    job_details[job["url"]] = [job["title"], ""]
+                    no_of_jobs_to_retrieve -= 1
+                    str3 = job_data['description']
+                    job["skills"] = helper.extract_skills(str3, all_skills)
                 jobs.append(job)
-    except Exception:
-        traceback.print_exc()
-    return jobs
+        except Exception:
+            traceback.print_exc()
+        return jobs
