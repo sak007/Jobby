@@ -16,7 +16,7 @@
 
 [![github workflow](https://github.com/sak007/Jobby/actions/workflows/style_checker.yml/badge.svg)](https://github.com/sak007/Jobby/actions/workflows/style_checker.yml)
 [![github workflow](https://github.com/sak007/Jobby/actions/workflows/main.yml/badge.svg)](https://github.com/sak007/Jobby/actions/workflows/main.yml)
-[![github workflow](https://github.com/sak007/Jobby/actions/workflows/code_cov.yml/badge.svg)](https://github.com/sak007/Jobby/actions/workflows/code_cov.yml)
+[![github workflow](https://github.com/Swaranjali167/Jobify/actions/workflows/code_cov.yml/badge.svg)](https://github.com/Swaranjali167/Jobify/actions/workflows/code_cov.yml)
 
 
 # Project 2
