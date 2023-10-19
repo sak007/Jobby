@@ -54,15 +54,13 @@ https://user-images.githubusercontent.com/28624935/143986517-158d58bf-e920-431f-
 ## What's new? (Delta, New Features)
 - Code Refactoring: Modularization the codebase. We reconfigured the database and implemented cascading features to simplify operations. Also, we split the functionalities into multiple files to create modularity and reduce single source of failure.
 
-- New Job Boards: We added scraping features to new Job Boards - Indeed, Monster, GoinGlobal and Simplyhired. Even though the previous iteration had 2 popular job boards, we decided to increase the search space in order to contribute an adequate number of roles for user's perusal and also provide sheer variety to the Job search space.
-
 - UI and UX: We completely changed the UI and UX of the Job aggregator to make it easier for user as well as owner to manage, edit and work smoothly. The new UI uses minimalism and provides only required data in a concise format.
 
 - Validations: We validated input for password, email, name, job type, and location for better user experience and for having clean data.
-
-- Edit your Resume Feature: User's resume keeps changing from time to time. We identified that the previous iteration did not provide an option for the user to update the resume. We decided it was important for the job seeker to have the ease of access instead of creating multiple accounts for every resume change.
-
-- Right to be forgotten: Users must have the choice to remove their data from any application without leaving any trace as and when they wish to do so. This was another feature we identified missing from the previous iteration which we felt was paramount and allowed user to delete account at any point.
+  
+- Analytics: Integrated functionality for getting job counts per dashboard in the mail sent to the user. Included company name and dates when jobs were posted.
+  
+- Password recovery - Added functionality for sending mail to users for password recovery so that the user can reset the password.
 
 - Code Coverage: Test Cases The project had very few test cases when we took over. From there, we have added test cases for both existing and new features. Our code coverage currently stands at 96%, with 40+ test cases.
 
