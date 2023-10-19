@@ -10,7 +10,7 @@ jobs:
     - name: Install Python 3.6.0
       uses: actions/setup-python@v1
       with:
-        python-version: 3.6.0
+        python-version: 3.7
     - name: Install dependencies
       run: |
         pip install pytest-cov
