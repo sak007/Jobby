@@ -78,7 +78,6 @@ def generate_user_jobs_mp(user_info, user_job_board_list, job_map):
 def generate_job_map(job_board_role_mp, all_skills):
     #print("job_board_role_mp",job_board_role_mp)
     job_map = {}
-    job_count_per_db = {}
     for jb in job_board_role_mp.keys():
         job_map[jb] = {}
         for rl in job_board_role_mp[jb]:
