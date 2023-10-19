@@ -60,7 +60,7 @@ https://user-images.githubusercontent.com/28624935/143986517-158d58bf-e920-431f-
   
 - Analytics: Integrated functionality for getting job counts per dashboard in the mail sent to the user. Included company name and dates when jobs were posted.
   
-- Password recovery - Added functionality for sending mail to users for password recovery so that the user can reset the password.
+- Password recovery : Added functionality for sending mail to users for password recovery so that the user can reset the password.
 
 - Code Coverage: Test Cases The project had very few test cases when we took over. From there, we have added test cases for both existing and new features. Our code coverage currently stands at 96%, with 40+ test cases.
 
