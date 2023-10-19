@@ -14,7 +14,7 @@
 [![Github pull requests](https://img.shields.io/github/issues-pr/Swaranjali167/Jobify)](https://github.com/Swaranjali167/Jobify/pulls?q=is%3Aopen+is%3Apr)
 [![Github closed pull requests](https://img.shields.io/github/issues-pr-closed/Swaranjali167/Jobify)](https://github.com/Swaranjali167/Jobify/pulls?q=is%3Apr+is%3Aclosed)
 
-[![github workflow](https://github.com/sak007/Jobby/actions/workflows/style_checker.yml/badge.svg)](https://github.com/sak007/Jobby/actions/workflows/style_checker.yml)
+[![github workflow](https://github.com/Swaranjali167/Jobify/actions/workflows/style_checker.yml/badge.svg)](https://github.com/Swaranjali167/Jobify/actions/workflows/style_checker.yml)
 [![github workflow](https://github.com/Swaranjali167/Jobify/actions/workflows/main.yml/badge.svg)](https://github.com/Swaranjali167/Jobify/actions/workflows/main.yml)
 [![github workflow](https://github.com/Swaranjali167/Jobify/actions/workflows/code_cov.yml/badge.svg)](https://github.com/Swaranjali167/Jobify/actions/workflows/code_cov.yml)
 
