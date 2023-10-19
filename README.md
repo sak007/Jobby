@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![version](https://img.shields.io/badge/version-3.0-blue)](https://github.com/Swaranjali167/Jobify/releases/tag/publish)
 [![Build Status](https://circleci.com/gh/sak007/Jobby/tree/main.svg?style=svg)](https://circleci.com/gh/sak007/Jobby/tree/main)
-[![codecov](https://codecov.io/gh/sak007/Jobby/branch/main/graph/badge.svg?token=Z9MGKKAXN6)](https://codecov.io/gh/sak007/Jobby)
+[![codecov](https://codecov.io/gh/Swaranjali167/Jobify/branch/main/graph/badge.svg?token=Z9MGKKAXN6)](https://codecov.io/gh/Swaranjali167/Jobify)
 [![DOI](https://zenodo.org/badge/704729732.svg)](https://zenodo.org/doi/10.5281/zenodo.10015683)
 
 [![GitHub issues](https://img.shields.io/github/issues/Swaranjali167/Jobify)](https://github.com/Swaranjali167/Jobify/issues)
