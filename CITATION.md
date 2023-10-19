@@ -1,17 +1,17 @@
-<a href="https://doi.org/10.5281/zenodo.5746400"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5746400.svg" alt="DOI"></a>
+<a href="https://zenodo.org/records/10020283"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5746400.svg" alt="DOI"></a>
 
-The project can be cited using the following link: https://doi.org/10.5281/zenodo.5746400
+The project can be cited using the following link: https://zenodo.org/records/10020283
 
 
 # BibTeX
 
 ```bibtex
-@article{Group32:Project 3,
-	title 	  = {JOBBY},
+@article{Group36:Project 2,
+	title 	  = {JOBIFY},
 	DOI 	  = {10.5281/zenodo.5746400},
-	author    = {Ashok Kumar Selvam, Rithik Jain, Sri Athithya Kruth Babu, Subramanian Venkataraman, Zunaid Sorathiya},
+	author    = {Swaranjali Jadhav, Pranjali Jadhav, Neha Jagtap, Shardul Khandekar},
 	publisher = {Zenodo},
-	year      = {2021},
-	month     = {November}
+	year      = {2023},
+	month     = {October}
 }
 
