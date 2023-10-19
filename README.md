@@ -4,10 +4,10 @@
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![version](https://img.shields.io/badge/version-3.0-blue)](https://github.com/sak007/Jobby/releases/tag/v3.0)
+[![version](https://img.shields.io/badge/version-3.0-blue)](https://github.com/Swaranjali167/Jobify/releases/tag/publish)
 [![Build Status](https://circleci.com/gh/sak007/Jobby/tree/main.svg?style=svg)](https://circleci.com/gh/sak007/Jobby/tree/main)
 [![codecov](https://codecov.io/gh/sak007/Jobby/branch/main/graph/badge.svg?token=Z9MGKKAXN6)](https://codecov.io/gh/sak007/Jobby)
-[![DOI](https://zenodo.org/badge/{704729732}.svg)](https://zenodo.org/badge/latestdoi/{704729732})
+[![DOI](https://zenodo.org/badge/704729732.svg)](https://zenodo.org/doi/10.5281/zenodo.10015683)
 
 [![GitHub issues](https://img.shields.io/github/issues/Swaranjali167/Jobify)](https://github.com/Swaranjali167/Jobify/issues)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/Swaranjali167/Jobify)](https://github.com/Swaranjali167/Jobify/issues?q=is%3Aissue+is%3Aclosed)
