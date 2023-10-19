@@ -74,7 +74,7 @@ You can contribute in the following ways to our code:
 
 <br></br>
 ### Setting up a development environment
-- Setup instructions given under [Installation Guide](https://github.com/Swaranjali167/Jobify/tree/documentation#-installation-guide) in [README.md](https://github.com/sak007/Jobby/blob/main/README.md)
+- Setup instructions given under [Installation Guide](https://github.com/Swaranjali167/Jobify/tree/documentation#-installation-guide) in [README.md](https://github.com/Swaranjali167/Jobify/blob/main/README.md)
 - Follow the steps as mentioned and
 **You’re all set!**
 <br></br>
