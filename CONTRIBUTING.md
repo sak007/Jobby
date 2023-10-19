@@ -30,11 +30,11 @@ The following are guidelines that we feel will nudge developers toward correct c
 ### How to Contribute
 
 To contribute, please issue a pull request using the following procedure:
-1. Make sure that any install or build dependencies are removed before the layer end while doing a build.
+1. Make sure that any install or build dependencies are removed before the layer ends while doing a build.
 
-2. Update the README.md with the appropriate changes to the interface, such as a change in the environment variables, an update in version number. Also, update navigation changes such as file location changes and dependency changes to the readme.
+2. Update the README.md with the appropriate changes to the interface, such as a change in the environment variables, and update in version number. Also, update navigation changes such as file location changes and dependency changes to the readme.
 
-3. Make sure to document any changes/additions you make to packages or libraries that need to be installed, since all of the commands to install new packages have to be run any time a new server instance is created.
+3. Make sure to document any changes/additions you make to packages or libraries that need to be installed since all of the commands to install new packages have to be run any time a new server instance is created.
 
 4. Update the version number and relevant code in demonstration/example files and in README.md to the new version.
 
