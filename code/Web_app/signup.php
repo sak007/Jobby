@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="author" content="Group-32, Fall 2021">
+  <meta name="author" content="Group-36, Fall 2023">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>JOBBY - Signup</title>
+  <title>JOBIFY - Signup</title>
   <?php
   /**
    * This segment of code is responsible for loading entries from the job_master
@@ -45,10 +45,14 @@
     }
   }
   $conn->close();
+
+
   ?>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -58,7 +62,7 @@
         <div class="row justify-content-sm-center h-100">
           <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
             <div class="text-center my-5">
-              <img src="logo.jpg" alt="logo">
+              <img src="logos.jpg" alt="logo">
               <!-- <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="logo" width="100"> -->
               <!-- <h2 class="display-4 font-weight-bold" style="font-size:15px;display:inline-block">S.R.I.J.A.S. (Smart Resume Interpreter And Job Alerts System)</h2> -->
             </div>
@@ -66,7 +70,7 @@
               <div class="card-body p-5">
                 <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
                 <form method="POST" class="needs-validation" novalidate="" autocomplete="off"
-                  enctype="multipart/form-data" action="registerUser.php">
+                  enctype="multipart/form-data" action="registerUser.php" onsubmit="return validateForm();">
 
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="inputName">Name</label>
@@ -84,16 +88,19 @@
 
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="inputLocation">Password</label>
-                    <input id="password" type="password" class="form-control" name="password"
-                      placeholder="Enter your Password" required>
-                    <div class="input-group-append">
-                      <button type="button" class="btn btn-link" id="showPasswordToggle"
-                        onclick="togglePasswordVisibility()">
-                        <i class="far fa-eye" id="eyeIcon"></i>
-                      </button>
+                    <div class="input-group">
+                      <input id="password" type="password" class="form-control" name="password"
+                        placeholder="Enter your Password" required>
+                      <div class="input-group-append">
+                        <button type="button" class="btn btn-link" id="showPasswordToggle"
+                          onclick="togglePasswordVisibility()">
+                          <i class="far fa-eye" id="eyeIcon"></i>
+                        </button>
+                      </div>
                     </div>
                     <div class="invalid-feedback"> Password is required </div>
                   </div>
+
 
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="inputLocation">Location</label>
@@ -141,9 +148,7 @@
                 </div>
               </div>
             </div>
-            <br>
-            <div align="center">Made with <span style="color: #e25555;">&hearts;</span>. Contribute on <a
-                href="https://github.com/sak007/SRIJAS" class="text-dark" target="_blank">GitHub</a>.</div>
+
           </div>
         </div>
       </div>
@@ -159,10 +164,10 @@
       const resume = document.getElementById('uploadResume').value;
       const resumeExtension = resume.slice(((resume.lastIndexOf(".") - 1) >>> 0) + 2);
 
-
       const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      const passwordPattern = /^(?=.\d)(?=.[a-zA-Z]).{8,}$/; // At least 8 characters with 1 number and 1 alphanumeric character
+      const passwordPattern = /^(?=.*\d)(?=.*[a-zA-Z]).{8,}$/; // At least 8 characters with 1 number and 1 alphanumeric character
 
+      // Remove validation styling for all input elements
       document.getElementById('inputName').classList.remove('is-invalid');
       document.getElementById('inputEmail').classList.remove('is-invalid');
       document.getElementById('password').classList.remove('is-invalid');
@@ -175,26 +180,29 @@
         return false;
       }
 
+      if (!emailPattern.test(email)) {
+        document.getElementById('inputEmail').classList.add('is-invalid');
+        return false;
+      }
+
       if (!passwordPattern.test(password)) {
         document.getElementById('password').classList.add('is-invalid');
         alert('Password must be at least 8 characters with at least 1 number and 1 alphanumeric character.');
         return false;
       }
 
-      if (!emailPattern.test(email)) {
-        document.getElementById('inputEmail').classList.add('is-invalid');
-        return false;
-      }
       if (location === 'Select City...') {
         document.getElementById('location').classList.add('is-invalid');
         alert('Location is required');
         return false;
       }
+
       if (jobType === 'Choose...') {
         document.getElementById('inputJobTypeId').classList.add('is-invalid');
         alert('Job Type is required');
         return false;
       }
+
       if (resume === '') {
         document.getElementById('uploadResume').classList.add('is-invalid');
         alert('Resume is required');
@@ -207,10 +215,8 @@
         return false;
       }
 
-
       return true;
     }
-
     function togglePasswordVisibility() {
       const passwordField = document.getElementById('password');
       const eyeIcon = document.getElementById('eyeIcon');
@@ -226,7 +232,10 @@
       }
     }
 
+
   </script>
+
+
 </body>
 
 </html>

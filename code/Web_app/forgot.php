@@ -103,7 +103,7 @@ if (isset($_POST["recover"])) {
         include("./phpmailer/class.smtp.php");
         $mail = new PHPMailer;
 
-        $subject = "Password Recovery - Jobby.com";
+        $subject = "Password Recovery - Jobify.com";
 
         $email_to = $email;
         $fromserver = "swaranjalimanik19@siesgst.ac.in";
@@ -118,7 +118,7 @@ if (isset($_POST["recover"])) {
             your account and change your security password as someone may have guessed it.</p>
             <br>
             <p>Thanks,</p>
-            <b>Jobby Team</b>";
+            <b>Jobify Team</b>";
         $mail->IsSMTP();
         $mail->Host = "smtp.gmail.com"; // Enter your host here
         $mail->SMTPAuth = true;
@@ -127,7 +127,7 @@ if (isset($_POST["recover"])) {
         $mail->Port = 25;
         $mail->IsHTML(true);
         $mail->From = "swaranjalimanik19@siesgst.ac.in";
-        $mail->FromName = "Jobby";
+        $mail->FromName = "Jobify";
         $mail->Sender = $fromserver; // indicates ReturnPath header
         $mail->Subject = $subject;
 

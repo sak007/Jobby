@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="author" content="Group-32, Fall 2021">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>JOBBY- Home</title>
+  <title>JOBIFY- Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 
 <head>
@@ -18,7 +18,7 @@
 <body>
 
   <div class="header">
-    <img src="logo.jpg" alt="logo">
+    <img src="logos.jpg" alt="logo">
     <div class="header-right">
       <a class="active" href="home.php">Home</a>
       <a href="register.php">Job Board</a>
@@ -60,7 +60,7 @@ while ($row = $userJbResult->fetch_assoc()) {
 
             <div class="card shadow-lg">
               <div class="card-body p-5">
-                <h1 class="fs-4 card-title fw-bold mb-4">Welcome to Jobby!</h1>
+                <h1 class="fs-4 card-title fw-bold mb-4">Welcome to Jobify!</h1>
                 <form method="POST" action="" enctype="multipart/form-data" class="needs-validation" novalidate=""
                   autocomplete="off">
                   <?php
@@ -100,8 +100,7 @@ while ($row = $userJbResult->fetch_assoc()) {
           </div>
         </div>
         <br>
-        <div align="center">Made with <span style="color: #e25555;">&hearts;</span>. Contribute on <a
-            href="https://github.com/sak007/SRIJAS" class="text-dark" target="_blank">GitHub</a>.</div>
+
         <br>
       </div>
     </section>
