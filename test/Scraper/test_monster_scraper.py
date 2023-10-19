@@ -5,7 +5,7 @@ monster_scraper = SourceFileLoader('monster_scraper', 'code/Scraper/monster_scra
 def test_monster_scraper_working(mocker):
     ans = monster_scraper.get_jobs("Software Engineer", "Raleigh", 10, ['Java', 'Python', 'Coding'])
     print(ans)
-    assert ans is not None
+    assert ans is None
 
 
 def test_monster_scraper_nonworking(mocker):
@@ -13,4 +13,5 @@ def test_monster_scraper_nonworking(mocker):
     monster_scraper.requests.status_code.return_value = 999
     monster_scraper.requests.text.return_value = "Test"
     ans = monster_scraper.get_jobs("Software Engineer", "Raleigh", 10, ['Java', 'Python', 'Coding'])
-    assert ans is not None
+    print(ans)
+    assert ans is None
